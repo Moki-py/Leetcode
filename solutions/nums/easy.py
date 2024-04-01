@@ -43,3 +43,23 @@ class SolutionMySqrt(object):
                 return i - 1
             elif m == x:
                 return i
+
+
+class SolutionClimbStairs(object):
+    """ 70. Climbing Stairs """
+    def climb_stairs(self, n):
+        """ Solution using dynamic programming """
+        if n == 1:
+            return 1
+        if n == 2:
+            return 2
+
+        osb = 2
+        tsb = 1
+
+        for _ in range(2, n):
+            wtc = osb + tsb
+            tsb = osb
+            osb = wtc
+
+        return wtc
