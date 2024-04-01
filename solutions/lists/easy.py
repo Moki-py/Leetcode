@@ -65,3 +65,21 @@ class SolutionSumRange(object):
         :rtype: int
         """
         return sum(self.nums[left:right + 1])
+
+
+class SolutionDeleteDuplicates(object):
+    """ 83. Remove Duplicates from Sorted List """
+    def delete_duplicates(self, head):
+        """ Solution using two pointers """
+        if not head:
+            return None
+
+        result = ListNode(val=head.val)
+        r = result
+
+        while head:
+            if r.val != head.val:
+                r.next = ListNode(val=head.val)
+                r = r.next
+            head = head.next
+        return result
