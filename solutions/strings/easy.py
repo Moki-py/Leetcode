@@ -31,3 +31,20 @@ class SolutionRomanToInt:
                 result += rom_nums[char]
 
         return result
+
+
+class SolutionLongestCommonPrefix:
+    """14. Longest Common Prefix"""
+    def longest_common_prefix(self, strs: list[str]) -> str:
+        """Solution using string slicing"""
+        if not strs:
+            return ""
+
+        prefix = strs[0]
+        for i in range(1, len(strs)):
+            while strs[i].find(prefix) != 0:
+                prefix = prefix[:-1]
+                if not prefix:
+                    return ""
+
+        return prefix
