@@ -6,9 +6,10 @@ FILES = ["easy.py", "medium.py", "hard.py"]
 
 
 def create_tree(ROOT_DIR: str | None = None):
-    # ROOT_DIR = os.path.join(os.getcwd(), ROOT_DIR) if ROOT_DIR else os.getcwd()
+    """Create tree of folders and files in ROOT_DIR"""
+    # ROOT_DIR =
+    # os.path.join(os.getcwd(), ROOT_DIR) if ROOT_DIR else os.getcwd()
     pass
-
 
 
 def create_files(
