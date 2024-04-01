@@ -83,3 +83,23 @@ class SolutionDeleteDuplicates(object):
                 r = r.next
             head = head.next
         return result
+
+
+class SolutionReverseList(object):
+    """ 206. Reverse Linked List """
+    def reverse_list(self, head):
+        """ Solution using iteration """
+        if not head:
+            return None
+
+        result = ListNode(val=head.val)
+        r = result
+        head = head.next
+
+        while head:
+            new = ListNode(val=head.val)
+            new.next = r
+            r = new
+            head = head.next
+
+        return r
