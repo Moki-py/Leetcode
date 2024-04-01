@@ -24,3 +24,10 @@ class SolutionSearchInsertPosition:
                 right = mid - 1
 
         return left
+
+
+class SolutionPlusOne(object):
+    """ 66. Plus One """
+    def plus_one(self, digits):
+        """ Solution using string conversion """
+        return [int(i) for i in str(int(''.join(map(str, digits))) + 1)]
