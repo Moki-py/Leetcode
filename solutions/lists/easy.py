@@ -50,3 +50,18 @@ class SolutionHasCycle(object):
             if two is None or one is None:
                 return False
         return False
+
+
+class SolutionSumRange(object):
+    """ 303. Range Sum Query - Immutable """
+    def __init__(self, nums):
+        """ Solution using prefix sum """
+        self.nums = nums
+
+    def sum_range(self, left, right):
+        """
+        :type left: int
+        :type right: int
+        :rtype: int
+        """
+        return sum(self.nums[left:right + 1])
