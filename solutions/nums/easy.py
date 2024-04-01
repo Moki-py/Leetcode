@@ -31,3 +31,15 @@ class SolutionPlusOne(object):
     def plus_one(self, digits):
         """ Solution using string conversion """
         return [int(i) for i in str(int(''.join(map(str, digits))) + 1)]
+
+
+class SolutionMySqrt(object):
+    """ 69. Sqrt(x) """
+    def my_sqrt(self, x):
+        """ Solution using binary search """
+        for i in range(0, int(x ** (0.5)) + 2):
+            m = i*i
+            if m > x:
+                return i - 1
+            elif m == x:
+                return i
