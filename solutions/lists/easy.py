@@ -34,3 +34,19 @@ class SolutionMergeTwoLists(object):
             r.next = list2
 
         return result.next
+
+
+class SolutionHasCycle(object):
+    """ 141. Linked List Cycle """
+    def has_cycle(self, head):
+        """ Solution using two pointers """
+        one = head
+        two = head
+        while one is not None and two.next is not None:
+            one = one.next
+            two = two.next.next
+            if one == two:
+                return True
+            if two is None or one is None:
+                return False
+        return False
