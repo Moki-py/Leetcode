@@ -62,3 +62,15 @@ class SolutionAddBinary:
         binary_sum = bin(decimal_sum)[2:]
 
         return binary_sum
+
+
+class SolutionConvertToTitle:
+    """ 168. Excel Sheet Column Title """
+    def convert_to_title(self, column_number: int) -> str:
+        """ Solution using string conversion """
+        title = ""
+        while column_number > 0:
+            column_number -= 1
+            title = chr(column_number % 26 + ord('A')) + title
+            column_number //= 26
+        return title
