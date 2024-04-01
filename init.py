@@ -1,3 +1,4 @@
+"""Create tree of folders and files in ROOT_DIR"""
 import os
 
 
@@ -5,29 +6,23 @@ FOLDERS = ["strings", "lists", "nums"]
 FILES = ["easy.py", "medium.py", "hard.py"]
 
 
-def create_tree(ROOT_DIR: str | None = None):
-    """Create tree of folders and files in ROOT_DIR"""
-    # ROOT_DIR =
-    # os.path.join(os.getcwd(), ROOT_DIR) if ROOT_DIR else os.getcwd()
-    pass
-
-
 def create_files(
-    FOLDERS: list[str], FILES: list[str], ROOT_DIR: str | None = None
+    folders: list[str], files: list[str], root_dir: str | None = None
 ) -> None:
     """
-    Создает файлы с названиями из FILES и соответствующим расширением из FORMATS
-    в каждой из папок FOLDERS в рабочей директории
+    Create files with names from FILES and corresponding
+    extensions from FORMATS in each of the FOLDERS
+    in the working directory.
 
-    :type FOLDERS: List[int] -- названия папок
-    :type FILES: List[int] -- названия файлов
-    :type ROOT_DIR: str | None -- рабочая директория(default None)
+    :type folders: List[int] -- folder names
+    :type files: List[int] -- file names
+    :type root_dir: str | None -- working directory (default None)
 
-    Пример строения репозитория после применения с указанными параметрами:
+    Example repository structure after applying with the specified parameters:
 
-    FOLDERS = ['dir1', 'dir2']
-    FILES = ['main.py', 'README.md']
-    ROOT_DIR = 'example'
+    folders = ['dir1', 'dir2']
+    files = ['main.py', 'README.md']
+    root_dir = 'example'
 
     TREE:
     example
@@ -39,13 +34,14 @@ def create_files(
         └── main.py
 
     """
-    ROOT_DIR = os.path.join(os.getcwd(), ROOT_DIR) if ROOT_DIR else os.getcwd()
-    for PATH in FOLDERS:
-        os.makedirs(os.path.join(ROOT_DIR, PATH))
-        for FILE in FILES:
-            with open(f"{os.path.join(ROOT_DIR, PATH)}/{FILE}", "w") as f:
+    root_dir = os.path.join(os.getcwd(), root_dir) if root_dir else os.getcwd()
+    for path in folders:
+        os.makedirs(os.path.join(root_dir, path))
+        for file in files:
+            file_path = os.path.join(root_dir, path, file)
+            with open(file_path, "w", encoding="utf-8"):
                 pass
 
 
 if __name__ == "__main__":
-    create_files(FOLDERS=FOLDERS, FILES=FILES, ROOT_DIR="solutions")
+    create_files(folders=FOLDERS, files=FILES, root_dir="solutions")
