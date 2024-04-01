@@ -48,3 +48,17 @@ class SolutionLongestCommonPrefix:
                     return ""
 
         return prefix
+
+
+class SolutionAddBinary:
+    """ 67. Add Binary """
+    def add_binary(self, a: str, b: str) -> str:
+        """ Solution using binary conversion """
+        decimal_a = int(a, 2)
+        decimal_b = int(b, 2)
+
+        decimal_sum = decimal_a + decimal_b
+
+        binary_sum = bin(decimal_sum)[2:]
+
+        return binary_sum
